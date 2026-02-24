@@ -812,6 +812,12 @@ section {
 .project-link.secondary:hover {
   color: var(--text);
 }
+.project-link.figma {
+  color: #a259ff;
+}
+.project-link.figma:hover {
+  color: #c084fc;
+}
 
 .case-study-badge {
   position: absolute;
