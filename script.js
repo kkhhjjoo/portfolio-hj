@@ -66,7 +66,7 @@ document.querySelectorAll('.nav-link').forEach((link) => {
 });
 
 // ===== 타이핑 효과 =====
-const texts = ['프론트엔드 개발자', '웹 크리에이터', '문제 해결사'];
+const texts = ['프론트엔드 개발자', 'UX를 설계하는 개발자', '사용자 중심 문제 해결사'];
 let textIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -189,28 +189,26 @@ function animateCounter(el, target) {
   requestAnimationFrame(update);
 }
 
-// ===== 프로젝트 필터링 =====
-const filterBtns = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
-
-filterBtns.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach((b) => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    const filter = btn.getAttribute('data-filter');
-
-    projectCards.forEach((card) => {
-      const category = card.getAttribute('data-category');
-
-      if (filter === 'all' || category === filter) {
-        card.classList.remove('hidden');
-        card.style.animation = 'fadeIn 0.3s ease forwards';
-      } else {
-        card.classList.add('hidden');
-      }
-    });
-  });
+// ===== 프로젝트 슬라이더 (Swiper) =====
+const projectsSwiper = new Swiper('.projects-swiper', {
+  loop: true,
+  speed: 600,
+  grabCursor: true,
+  pagination: {
+    el: '.projects-pagination',
+    clickable: true,
+  },
+  navigation: {
+    prevEl: '.projects-prev',
+    nextEl: '.projects-next',
+  },
+  keyboard: {
+    enabled: true,
+  },
+  a11y: {
+    prevSlideMessage: '이전 프로젝트',
+    nextSlideMessage: '다음 프로젝트',
+  },
 });
 
 // ===== 연락처 폼 =====
