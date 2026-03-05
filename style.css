@@ -663,10 +663,13 @@ section {
 }
 
 .slide-content {
-  padding: 40px 36px;
+  padding: 28px 24px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+}
+.slide-content .slide-title {
+  margin-bottom: 12px;
 }
 
 .slide-numbering {
@@ -793,6 +796,9 @@ section {
 .project-links {
   display: flex;
   gap: 16px;
+  padding-top: 14px;
+  margin-top: 4px;
+  border-top: 1px solid var(--border);
 }
 
 .project-link {
@@ -833,8 +839,49 @@ section {
   backdrop-filter: blur(6px);
 }
 
+/* 프로젝트 메타: 팀 · 역할 · 기술 · 해결문제 · 결과 */
+.project-meta {
+  display: grid;
+  gap: 6px 0;
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+.project-meta .meta-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 10px;
+  align-items: start;
+  line-height: 1.45;
+}
+.project-meta dt {
+  font-weight: 700;
+  color: var(--accent-light);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin: 0;
+}
+.project-meta dd {
+  margin: 0;
+  color: var(--text-muted);
+}
+.project-meta dd .tech-tag {
+  display: inline-block;
+  margin-right: 4px;
+  margin-bottom: 2px;
+  padding: 2px 8px;
+  background: rgba(108, 99, 255, 0.12);
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 0.72rem;
+}
+
 .ux-process-header {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   padding: 10px 14px;
   background: rgba(108, 99, 255, 0.08);
   border: 1px solid rgba(108, 99, 255, 0.2);
@@ -857,11 +904,14 @@ section {
 }
 
 .case-study-section {
-  margin-bottom: 18px;
-  padding: 14px 16px;
+  margin-bottom: 12px;
+  padding: 12px 14px;
   background: rgba(108, 99, 255, 0.05);
   border-left: 3px solid var(--accent);
   border-radius: 0 8px 8px 0;
+}
+.case-study-section:last-of-type {
+  margin-bottom: 16px;
 }
 
 .case-study-label {
@@ -1371,7 +1421,23 @@ section {
   }
 
   .slide-content {
-    padding: 28px 24px;
+    padding: 20px 18px;
+  }
+
+  .project-meta {
+    padding: 10px 12px;
+    font-size: 0.75rem;
+  }
+  .project-meta .meta-row {
+    grid-template-columns: 58px 1fr;
+    gap: 6px;
+  }
+  .project-meta dt {
+    font-size: 0.68rem;
+  }
+  .project-meta dd .tech-tag {
+    font-size: 0.68rem;
+    padding: 1px 6px;
   }
 
   .slide-title {
