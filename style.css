@@ -833,6 +833,29 @@ section {
   backdrop-filter: blur(6px);
 }
 
+.ux-process-header {
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  background: rgba(108, 99, 255, 0.08);
+  border: 1px solid rgba(108, 99, 255, 0.2);
+  border-radius: 8px;
+}
+.ux-process-header .case-study-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--accent-light);
+}
+.ux-process-header .process-flow {
+  margin-bottom: 0;
+}
+.ux-process-header .process-flow span:not(.arrow) {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+}
+
 .case-study-section {
   margin-bottom: 18px;
   padding: 14px 16px;
@@ -859,6 +882,18 @@ section {
 
 .case-study-section p strong {
   color: var(--text);
+}
+.case-study-section p.goal-block {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(108, 99, 255, 0.15);
+}
+.case-study-section p.goal-block em {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: normal;
 }
 
 .process-flow {
