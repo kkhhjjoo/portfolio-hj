@@ -214,7 +214,7 @@ const projectsSwiper = new Swiper('.projects-swiper', {
 // ===== 연락처 폼 =====
 // ===== EmailJS 초기화 =====
 // EmailJS 대시보드 Account > Public Key 를 아래에 입력하세요
-emailjs.init('YOUR_PUBLIC_KEY');
+emailjs.init({ publicKey: '7XFTTXNx93yccY-3e' });
 
 const contactForm = document.getElementById('contact-form');
 const formSuccess = document.getElementById('form-success');
@@ -227,14 +227,14 @@ contactForm.addEventListener('submit', (e) => {
   submitBtn.disabled = true;
 
   const templateParams = {
-    from_name: contactForm.querySelector('#name').value,
-    from_email: contactForm.querySelector('#email').value,
-    subject: contactForm.querySelector('#subject').value,
+    name: contactForm.querySelector('#name').value,
+    email: contactForm.querySelector('#email').value,
+    title: contactForm.querySelector('#subject').value,
     message: contactForm.querySelector('#message').value,
   };
 
   // EmailJS 대시보드에서 Service ID, Template ID 를 아래에 입력하세요
-  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+  emailjs.send('service_6jyf0cw', 'template_o8kzaoe', templateParams)
     .then(() => {
       contactForm.reset();
       submitBtn.textContent = '메시지 보내기';
@@ -242,10 +242,11 @@ contactForm.addEventListener('submit', (e) => {
       formSuccess.classList.add('show');
       setTimeout(() => formSuccess.classList.remove('show'), 4000);
     })
-    .catch(() => {
+    .catch((err) => {
       submitBtn.textContent = '메시지 보내기';
       submitBtn.disabled = false;
-      alert('전송에 실패했습니다. 잠시 후 다시 시도해주세요.');
+      console.error('EmailJS 오류:', err);
+      alert('오류: ' + JSON.stringify(err));
     });
 });
 
