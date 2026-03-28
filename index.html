@@ -113,8 +113,7 @@
               <strong>디자인 씽킹</strong> (Desirability · Viability ·
               Feasibility)을 적용해 접근성과 효율성을 모두 갖춘 제품을 만드는
               것이 목표입니다.
-            </p>
-            <p>리서치 → 와이어프레임 → 사용자 흐름 설계 → 개선 반복</p>
+            </p> 
             <div class="about-stats">
               <div class="stat">
                 <span class="stat-number" data-count="5"></span>
@@ -528,9 +527,10 @@
                     <div class="meta-row">
                       <dt>기술</dt>
                       <dd>
-                        <span class="tech-tag">JavaScript</span
-                        ><span class="tech-tag">CSS</span
-                        ><span class="tech-tag">OpenWeather API</span>
+                        <span class="tech-tag">React</span
+                        ><span class="tech-tag">JavaScript</span
+                        ><span class="tech-tag">OpenWeather API</span
+                        ><span class="tech-tag">fetch</span>
                       </dd>
                     </div>
                     <div class="meta-row">
@@ -564,8 +564,8 @@
                   <div class="case-study-section">
                     <div class="case-study-label">📐 와이어프레임</div>
                     <p>
-                      단일 뷰에 기온·날씨·체감온도 최상위 배치. 보조
-                      정보(습도·풍속 등)는 하위 계층. 위치 기반 1화면 구조로
+                      단일 뷰에 기온·날씨·체감온도 최상위 배치. 시간별·7일 예보와
+                      도시 선택은 하위 계층으로 구성. 위치 기반 1화면 구조로
                       정보 계층 설계.
                     </p>
                   </div>
@@ -573,15 +573,16 @@
                     <div class="case-study-label">🗺️ 사용자 흐름</div>
                     <p>
                       <strong>진입(위치 자동) → 즉시 현재 날씨 확인</strong>.
-                      별도 검색/설정 없이 한 화면에서 핵심 정보만 노출. 스크롤
-                      최소화.
+                      도시 선택 버튼으로 빠른 전환, 시간별·7일 예보로
+                      추가 스크롤 없이 흐름 파악 가능.
                     </p>
                   </div>
                   <div class="case-study-section">
                     <div class="case-study-label">🔄 개선과정</div>
                     <p>
-                      OpenWeather API로 위치 기반
-                      <strong>자동 조회</strong> 적용. 시각적
+                      OpenWeather API + fetch로 위치 기반
+                      <strong>자동 조회</strong> 및 도시 선택 전환 구현.
+                      시간별·7일 예보 추가로 정보 밀도 향상. 시각적
                       위계(타이포·색상)로 기온·체감·날씨 상태를 1초 내 인지
                       가능하도록 개선.
                     </p>
@@ -597,17 +598,25 @@
                         <span class="metric-value">위치 자동</span
                         ><span class="metric-desc">입력 없이 조회</span>
                       </div>
+                      <div class="metric">
+                        <span class="metric-value">시간별·7일</span
+                        ><span class="metric-desc">예보 제공</span>
+                      </div>
+                      <div class="metric">
+                        <span class="metric-value">4개 도시</span
+                        ><span class="metric-desc">원터치 전환</span>
+                      </div>
                     </div>
                   </div>
                   <div class="project-links">
-                    <a
-                      href="https://wondrous-weather.netlify.app/"
+                    
+                      <a href="https://kkhhjjoo-weatherapp.netlify.app/"
                       class="project-link"
                       target="_blank"
                       >라이브 데모 →</a
                     >
-                    <a
-                      href="https://github.com/kkhhjjoo/weather-app"
+                    
+                      <a href="https://github.com/kkhhjjoo/kkhhjjoo-weatherapp-National-city"
                       class="project-link secondary"
                       target="_blank"
                       >GitHub →</a
@@ -615,10 +624,11 @@
                   </div>
                 </div>
                 <div class="slide-pic">
-                  <img src="./images/weather.png" alt="날씨 대시보드" />
+                  <img src="./images/weather.png" alt="날씨 앱" />
                 </div>
               </div>
             </div>
+                
             <!-- 슬라이드 4: 모아 -->
             <div class="swiper-slide">
               <div class="slide-inner">
@@ -853,7 +863,7 @@
               <div class="contact-icon">📧</div>
               <div>
                 <h4>이메일</h4>
-                <p>khjoo1203@naver.com</p>
+                <p><a href="mailto:khjoo1203@naver.com">khjoo1203@naver.com</a></p>
               </div>
             </div>
             <div class="contact-item">
@@ -871,9 +881,6 @@
               </div>
             </div>
             <div class="social-links">
-              <a href="https://github.com/kkhhjjoo" class="social-btn"
-                >GitHub</a
-              >
               <a href="https://velog.io/@khjoo1203/posts" class="social-btn"
                 >Velog</a
               >
