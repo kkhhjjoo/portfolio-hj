@@ -716,35 +716,42 @@ section {
 /* 슬라이더 네비게이션 버튼 */
 .swiper-button-prev.projects-prev,
 .swiper-button-next.projects-next {
-  color: var(--accent);
-  background: var(--bg-card);
-  border: 1px solid var(--border-light);
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  top: 50%;
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: absolute;
+  top: 30%;
   transform: translateY(-50%);
+  z-index: 20;
+  align-items: center;
+  justify-content: center;
+  width: 44px !important;
+  height: 44px !important;
+  background: var(--accent) !important;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
   transition: var(--transition);
 }
 
 .swiper-button-prev.projects-prev {
-  left: 4px;
+  left: 6px;
 }
 
 .swiper-button-next.projects-next {
-  right: 4px;
+  right: 6px;
 }
 
 .swiper-button-prev.projects-prev:hover,
 .swiper-button-next.projects-next:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
+  background: var(--accent-light) !important;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .swiper-button-prev.projects-prev::after,
 .swiper-button-next.projects-next::after {
-  font-size: 1rem;
+  color: #fff;
+  font-size: 1rem !important;
   font-weight: 700;
 }
 
